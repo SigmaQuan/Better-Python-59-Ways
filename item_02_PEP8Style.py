@@ -42,10 +42,41 @@
 # refers to the class).
 
 
-# Expersssions and Statements:
+# Expressions and Statements: The Zen of Python states: "There should be one-
+# and preferably only one-obvious way to do it."
 
+# Use inline negation (if a is not b) instead of negative of positive
+# expressions (if not a is b)
+
+# Don't check for empty value (like [] or '') by checking the length
+# (if len(somelist) == 0). Use if not somelist and assume empty values
+# implicitly evaluate to False.
+
+# The same thing goes for non-empty values (like [1] or 'hi'). The statement
+# if somelist is implicitly True for non-empty values.
+
+# Avoid single-line if statements, for and while loops, and except compound
+# statements. Spread these over multiple lines for clarity.
+
+# Always put import statements as the top of a file.
+
+# Always use absolute names for modules when importing them, not names
+# relative to the current module's own path. For example, to import the foo
+# module for the bar package, you should do from bar import foo, not just
+# import foo.
+
+# If you must do relative imports, use the explicit syntax from . import foo.
+
+# Imports should be in sections in the following order: standard library
+# modules, third-party modules, your own modules. Each subsection should
+# have imports in alphabetical order.
 
 
 # Things to Remember
 
+# Always follow the PEP 8 style guide when writing Python code.
 
+# Sharing a common style with the larger Python community facilitates
+# collaboration with others.
+
+# Using a consistent style makes it easier to modify your own code later.
