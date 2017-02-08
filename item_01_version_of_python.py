@@ -1,3 +1,6 @@
+# Item 1: Know which version of python you're using
+
+
 # $ python --version
 # Python 2.7.12
 #
@@ -14,8 +17,13 @@ print(sys.version)
 # [GCC 5.4.0 20160609]
 
 
-# # Things to Remember
-# There are two major version of Python still in active use: Python 2 and Python 3.
-# There are multiple popular runtimes for Python: CPython, Jython, IronPython, PyPy, etc.
-# Be sure that the command-line for running Python on your system is the version you expect it to be.
-# Prefer Python 3 for your next project because that is the primary focus of the Python community.
+# Things to Remember
+
+# 1. There are two major version of Python still in active use: Python 2 and
+#     Python 3.
+# 2. There are multiple popular runtimes for Python: CPython, Jython,
+#     IronPython, PyPy, etc.
+# 3. Be sure that the command-line for running Python on your system is the
+#     version you expect it to be.
+# 4. Prefer Python 3 for your next project because that is the primary focus
+#     of the Python community.
