@@ -68,4 +68,35 @@ print("Opacity: %r" % opacity)
 # found in the dictionary, this code does exactly the same thing as the green
 # case.
 
-# 
+# However, this expression is difficult to read and it still doesn't do
+# everything you need. You'd also want to ensure that all the parameter values
+# are integers so you can use them in mathematical expressions. To do that,
+# you'd wrap each expression with the int built-in function to parse the
+# string as an integer.
+
+
+red = int(my_values.get('red', [''])[0] or 0)
+print(red)
+# 5
+
+
+# This is now extremely hard to read. There's so much visual noise. The code
+# isn't approachable. A new reader of the code would have to spend too much
+# time picking apart the expression to figure out what it actually does. Even
+# though it's nice to keep things short, it's not worth trying to fit this all
+# on one line.
+
+# Python 2.5 added if/else conditional-or ternary-expressions to make cases
+# like this clearer while keeping the code short.
+
+
+red = my_values.get('red', [''])
+red = int(red[0]) if red[0] else 0
+print(red)
+# 5
+
+
+# This is better. For less complicated situations, if/else conditional
+# expressions can make things very clear.
+
+
