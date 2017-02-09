@@ -76,8 +76,8 @@ print("Opacity: %r" % opacity)
 
 
 red = int(my_values.get('red', [''])[0] or 0)
-print(red)
-# 5
+print('red:', red)
+# red: 5
 
 
 # This is now extremely hard to read. There's so much visual noise. The code
@@ -92,11 +92,58 @@ print(red)
 
 red = my_values.get('red', [''])
 red = int(red[0]) if red[0] else 0
-print(red)
-# 5
+print('red:', red)
+# red: 5
 
 
 # This is better. For less complicated situations, if/else conditional
-# expressions can make things very clear.
+# expressions can make things very clear. But the example above is still not
+# as clear as the alternative of a full if/else statement over multiple lines.
+# Seeing all of the logic spread out like this makes the dense version seem
+# even more complex.
 
 
+green = my_values.get('green', [''])
+if green[0]:
+    green = int(green[0])
+else:
+    green = 0
+
+
+# Writing a helper function is the way to go, especially if you need to use
+# this logic repeatedly.
+
+
+def get_first_int(values, key, default=0):
+    found = values.get(key, [''])
+    if found[0]:
+        found = int(found[0])
+    else:
+        found = default
+    return found
+
+
+# The calling code is much clearer than complex expression using or and the
+# two-line version using the if/else expression.
+
+
+green = get_first_int(my_values, 'green')
+print('green', green)
+# green 0
+
+
+# As soon as your expressions get complicated, it's time to consider
+# splitting them into smaller pieces and moving logic into helper functions.
+# What you gain in readability always outweighs what brevity may have
+# afforded you. Don't let Python's pithy syntax for complex expressions get
+# you into a mess like this.
+
+
+# Things to remember
+
+# 1. Python's syntax makes it all too easy to write single-line expressions
+#     that are overly complicated and difficult to read.
+# 2. Move complex expressions into helper functions, especially if you need to
+#     use the same logic repeatedly.
+# 3. The if/else expression provides a more readable alternative to using
+#     Boolean operators like or and adn in expressions.
