@@ -76,7 +76,7 @@ print("Opacity: %r" % opacity)
 
 
 red = int(my_values.get('red', [''])[0] or 0)
-print('red:', red)
+print('red: ', red)
 # red: 5
 
 
@@ -92,7 +92,7 @@ print('red:', red)
 
 red = my_values.get('red', [''])
 red = int(red[0]) if red[0] else 0
-print('red:', red)
+print('red: ', red)
 # red: 5
 
 
@@ -128,8 +128,8 @@ def get_first_int(values, key, default=0):
 
 
 green = get_first_int(my_values, 'green')
-print('green', green)
-# green 0
+print('green: ', green)
+# green: 0
 
 
 # As soon as your expressions get complicated, it's time to consider
