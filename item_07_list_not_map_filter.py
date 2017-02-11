@@ -23,7 +23,6 @@ print(squares)
 # Python 2
 # [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 # Python 3
-# <map object at 0x7f44af905780>
 print(list(squares))
 # [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
