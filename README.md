@@ -1,2 +1,2 @@
-# BetterPython59Ways
-Code Sample of Book "Effective Python: 59 Specific Ways to Write Better Pyton" by Brett Slatkin.
+# Effective Python: 59 Specific Ways to Write Better Python
+Code Sample of Book "Effective Python: 59 Specific Ways to Write Better Python" by Brett Slatkin.
