@@ -17,7 +17,8 @@ import json
 # statements for reusable try/finally behavior" for another approach).
 
 
-handle = open('item_13_try_except_else_finally_.py')  # May raise IOError
+handle = open('item_13_try_except_else_finally.py')  # May raise IOError
+# handle = open('item_13_try_except_else_finally_.py')  # May raise IOError
 # FileNotFoundError: [Errno 2] No such file or directory:
 #     'item_13_try_except_else_finally_.py'
 try:
