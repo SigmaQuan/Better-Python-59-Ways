@@ -15,14 +15,14 @@ Python 3.
      of the Python community.
     
      
-### Item 2: Follow the PEP 8 style guide
+### [Item 2: Follow the PEP 8 style guide](item_02_PEP8Style.py)
 - 1. Always follow the PEP 8 style guide when writing Python code.
 - 2. Sharing a common style with the larger Python community facilitates
      collaboration with others.
 - 3. Using a consistent style makes it easier to modify your own code later.
 
 
-### Item 3: Know the difference between bytes, str, and unicode
+### [Item 3: Know the difference between bytes, str, and unicode](item_03_Difference_bytes_str_unicode.py)
 - 1. In Python 3, bytes contains sequences of 8-bit values, str contains
      sequences of Unicode characters. bytes and str instances can't be
      used together with operators (like > or +).
@@ -36,7 +36,7 @@ Python 3.
      file using a binary mode (like 'rb' or 'wb').
 
 
-### Item 4: Write helper functions instead of complex expressions
+### [Item 4: Write helper functions instead of complex expressions](item_04_helper_function.py)
 - 1. Python's syntax makes it all too easy to write single-line expressions
      that are overly complicated and difficult to read.
 - 2. Move complex expressions into helper functions, especially if you need to
@@ -45,7 +45,7 @@ Python 3.
      Boolean operators like or and adn in expressions.
 
 
-### Item 5: Know hot to slice sequences
+### [Item 5: Know hot to slice sequences](item_05_slice_sequence.py)
 - 1. Avoid being verbose: Don't supply 0 for the start index or the length of
      the sequence for the end index.
 - 2. Slicing is forgiving of start or end indexes that are out of bounds,
@@ -55,7 +55,7 @@ Python 3.
      sequence with what's referenced even if their lengths are different.
 
 
-### Item 6: Avoid using start, end and stride in a single slice 
+### [Item 6: Avoid using start, end and stride in a single slice](item_06_avoid_using.py)
 - 1. Specifying start, end, and stride in a slice can be extremely confusing.
 - 2. Prefer using positive stride values in slices without start or end
      indexes. Avoid negative stride values if possible.
@@ -64,7 +64,7 @@ Python 3.
      another to stride) or using islice form itertools built-in module.
 
 
-### Item 7: Use list comprehensions instead of map and filter 
+### [Item 7: Use list comprehensions instead of map and filter](item_07_list_not_map_filter.py) 
 - 1. List comprehensions are clearer than the map and filter built-in
      functions because they don't require extra lambda expressions.
 - 2. List comprehensions allow you easily skip items from the input list, a
@@ -72,14 +72,14 @@ Python 3.
 - 3. Dictionaries and sets also support comprehension expressions.
 
 
-### Item 8: Avoid more than two expressions in list comprehensions 
+### [Item 8: Avoid more than two expressions in list comprehensions](item_08_no_more_than_2_expressions.py)
 - 1. List comprehensions support multiple levels of loops and multiple
      conditions per loop level.
 - 2. List comprehensions with more than two expressions are very difficult to
      read and should be avoided.
 
 
-### Item 9: Consider generator expressions for large comprehensions
+### [Item 9: Consider generator expressions for large comprehensions](item_09_generator_expressions.py)
 - 1. List comprehensions can cause problems for large inputs by using too much
      memory.
 - 2. Generator expressions avoid memory issues by producing outputs one at a
@@ -89,7 +89,7 @@ Python 3.
 - 4. Generator expressions execute very quickly when chained together.
 
 
-### Item 10: Prefer enumerate over range
+### [Item 10: Prefer enumerate over range](item_10_prefer_enumerate.py)
 - 1. enumerate provides concise syntax for looping over an iterator and
      getting the index of each item from the iterator as you go.
 - 2. Prefer enumerate instead of looping over a range and indexing into a
@@ -98,7 +98,7 @@ Python 3.
      which to begin counting (zero is default).
 
 
-### Item 11: Use zip to process iterators in parallel
+### [Item 11: Use zip to process iterators in parallel](item_11_use_zip.py)
 - 1. The zip built-in function can be used to iterate over multiple iterators
      in parallel.
 - 2. In Python 3, zip is a lazy generator that produces tuples. In Python 2,
@@ -110,7 +110,7 @@ Python 3.
      lengths (see Item 46: Use built-in algorithms and data structures).
 
 
-### Item 12: Avoid else blocks after for and while loops
+### [Item 12: Avoid else blocks after for and while loops](item_12_avoid_else.py)
 - 1. Python has special syntax that allows else blocks to immediately follow
      for and while loop interior blocks.
 - 2. The else block after a loop only runs if the loop body did not encounter
@@ -119,7 +119,7 @@ Python 3.
      intuitive and can be confusing.
 
 
-### Item 13: Take advantage of each block in try/except/else/finally
+### [Item 13: Take advantage of each block in try/except/else/finally](item_13_try_except_else_finally.py)
 - 1. The try/finally compound statement lets you run cleanup code regardless
      of whether exceptions were raised in the try block.
 - 2. The else block helps you minimize the amount of code in try blocks and
@@ -131,7 +131,7 @@ Python 3.
 ## Chapter 2: Functions
 
 
-### Item 14: Prefer exceptions to returning None
+### [Item 14: Prefer exceptions to returning None](item_14_prefer_exceptions.py)
 - 1. Functions that return None to indicate special meaning are error prone
      because None and other values (e.g., zero, the empty string) all
      evaluate to False in conditional expressions.
