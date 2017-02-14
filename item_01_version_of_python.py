@@ -1,3 +1,6 @@
+# Chapter 1: Pythonic thinking
+
+
 # Item 1: Know which version of python you're using
 
 
