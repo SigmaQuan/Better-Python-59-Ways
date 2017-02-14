@@ -4,7 +4,7 @@ Code Sample of Book "Effective Python: 59 Specific Ways to Write Better Python" 
 ## Chapter 1: Pythonic thinking
 
 
-### Item 1: Know which version of python you're using
+### [Item 1: Know which version of python you're using](item_01_version_of_python.py)
 - 1. There are two major version of Python still in active use: Python 2 and
 Python 3.
 - 2. There are multiple popular runtimes for Python: CPython, Jython,
