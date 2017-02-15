@@ -123,5 +123,102 @@ def sort_priority2(number, group):
 # Getting data out
 
 
-# In Python 3
+# In Python 3, there is special syntax for getting data out of a closure. The
+# nonlocal statement is used to indicate that scope traversal should happen
+# upon assignment for a specific variable name. The only limit is that
+# nonlocal won't traverse up to the module-level scope (to avoid polluting
+# globals)
 
+# Here, I define the same function again using nonlocal:
+
+
+def sort_priority3(numbers, group):
+    found = False
+    def helper(x):
+        nonlocal found
+        if x in group:
+            found = True
+            return (0, x)
+        return (1, x)
+    numbers.sort(key=helper)
+    return found
+
+
+# The nonlocal statement makes it clear when data is being assigned out of a
+# closure into another scope. It's comlementary to the global statement, which
+# indicates that a variable's assignment should go directly into the module
+# scope.
+
+# However, much like the anti-patten of global variables, I'd caution against
+# using nonlocal for anything beyond simple functions. The side effect of
+# nonlocal can be hard to follow. It's especially hard to understand in long
+# functions where the nonlocal statements and assignments to associated
+# variables are far apart.
+
+# When your usage of nonlocal starts getting complicated, it's better to wrap
+# your state in a helper class. Here, I define a class that achieves the same
+# result as the nonlocal approach. It's a little longer, but is much easier to
+# read (see Item 23: "Accept Functions for simple interfaces instead of
+# classes" for detail on the __call__ special method).
+
+
+class Sorter(object):
+    def __init__(self, group):
+        self.group = group
+        self.found = False
+
+    def __call__(self, x):
+        if x in self.group:
+            self.found = True
+            return (0, x)
+        return (1, x)
+
+
+sorter = Sorter(group)
+numbers.sort(key=sorter)
+print(numbers)
+assert sorter.found is True
+# [2, 3, 5, 7, 1, 4, 6, 8]
+
+
+# Scope in Python 2
+
+
+# Unfortunately, Python 2 donesn't support that nonlocal keyword. In order to
+# get similar behavior, you need to use a work-around that takes advantage of
+# Python's scoping rules. This approach isn't pretty, but it's the common
+# Python idiom.
+
+
+# Python 2
+def sort_priority(numbers, group):
+    found = [False]
+    def helper(x):
+        if x in group:
+            found[0] = True
+            return (0, x)
+        return (1, x)
+    numbers.sort(key=helper)
+    return found[0]
+
+
+# As, explained above, Python will traverse up the scope where the found
+# variable is referenced to resolve its current value. The trick is that the
+# value for found is a list, which is mutable. This means that once retrieved,
+# the closure can modify the state of found to send data out of the inner
+# scope (with found[0] = True).
+
+# This approach also works when the variable used to traverse the scope is a
+# dictionary, a set, or an instance of a class you've defined.
+
+
+# Things to remember
+
+# 1. Closure functions can refer to variables from any of the scopes in which
+#     they were defined.
+# 2. By default, closure can't affect enclosing scopes by assigning variables.
+# 3. In Python 3, use the nonlocal statement to indicate when a closure can
+#     modify a variable in its enclosing scopes.
+# 4. In Python 2, use a mutable value (like a single-item list) to work around
+#     the lack of the nonlocal statement.
+# 5. Avoid using nonlocal statements for anything beyond simple functions.
