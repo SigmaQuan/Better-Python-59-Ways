@@ -149,3 +149,26 @@ Python 3.
 - 4. In Python 2, use a mutable value (like a single-item list) to work around
      the lack of the nonlocal statement.
 - 5. Avoid using nonlocal statements for anything beyond simple functions.
+
+
+### [Item 16: Consider generators instead of returning lists](item_16_generators_instead_of_lists.py)
+- 1. Using generators can be clearer than the alternative of returning lists
+    of accumulated results.
+- 2. The iterator returned by a generator produces the set of values passed to
+    yield expressions within the generator function's body.
+- 3. Generators can produce a sequence of outputs for arbitrarily large inputs
+    because their working memory doesn't include all inputs and outputs.
+
+
+### [Item 17: Be defensive when iterating over arguments](item_17_be_defensive.py)
+- 1. Beware of functions that iterate over input arguments multiple times. If
+     these arguments are iterators, you may see strange behavior and missing 
+-     values.
+- 2. Python's iterator protocol defines how containers and iterators interact
+     with the iter and next built-in functions, for loops, and related 
+     expression.
+- 3. You can easily define your own iterable container type by implementing 
+     the __iter__ method as a generator.
+- 4. You can detect that a value is an iterator (instead of a container) if
+     calling iter on it twice produces the same result, which can then be 
+     progressed with the next built-in function.
