@@ -92,7 +92,7 @@ def index_file(handle):
 # Running the generator produces the same results.
 
 
-with open('address.txt', 'r') as f:
+with open('item_16_address.txt', 'r') as f:
     it = index_file(f)
     results = itertools.islice(it, 0, 3)
     print(list(results))
