@@ -172,3 +172,14 @@ Python 3.
 - 4. You can detect that a value is an iterator (instead of a container) if
      calling iter on it twice produces the same result, which can then be 
      progressed with the next built-in function.
+
+
+### [Item 18: Reduce visual noise with variable positional arguments](item_18_reduce_visual_noise.py)
+- 1. Functions can accept a variable number of positional arguments by using
+    *args in the def statement.
+- 2. You can use the items from a sequence as the positional arguments for a
+    function with the * operator.
+- 3. Using the * operator with a generator may cause your program to run out
+    of memory and crash.
+- 4. Adding new positional parameters to functions that accept *args can
+    introduce hard-to-find bugs.
