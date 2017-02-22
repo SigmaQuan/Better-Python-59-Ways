@@ -183,3 +183,12 @@ Python 3.
     of memory and crash.
 - 4. Adding new positional parameters to functions that accept *args can
     introduce hard-to-find bugs.
+
+### [Item 19: Provide optimal behavior with keyword arguments](item_19_provide_optimal_behavior.py)
+- 1. Function arguments can be specified by position or by keyword.
+- 2. Keywords make it clear what the purpose of each arguments is when it
+    would be confusing with only positional arguments.
+- 3. Keywords arguments with default values make it easy to add new behaviors
+    to a function, especially when the function has existing callers.
+- 4. Optional keyword arguments should always be passed by keyword instead of
+    by position.
