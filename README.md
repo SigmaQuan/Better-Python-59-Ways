@@ -192,3 +192,14 @@ Python 3.
     to a function, especially when the function has existing callers.
 - 4. Optional keyword arguments should always be passed by keyword instead of
     by position.
+
+
+### [Item 20: Use None and Docstrings to specify dynamic default arguments](item_20_use_none_and_docstrings.py)
+- 1. Closure functions can refer to variables from any of the scopes in which
+     they were defined.
+- 2. By default, closure can't affect enclosing scopes by assigning variables.
+- 3. In Python 3, use the nonlocal statement to indicate when a closure can
+     modify a variable in its enclosing scopes.
+- 4. In Python 2, use a mutable value (like a single-item list) to work around
+     the lack of the nonlocal statement.
+- 5. Avoid using nonlocal statements for anything beyond simple functions.
