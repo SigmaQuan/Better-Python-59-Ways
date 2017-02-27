@@ -203,3 +203,14 @@ Python 3.
 - 4. In Python 2, use a mutable value (like a single-item list) to work around
      the lack of the nonlocal statement.
 - 5. Avoid using nonlocal statements for anything beyond simple functions.
+
+
+### [Item 21: Enforce clarity with key-word only arguments](item_21_enforce_clarity.py)
+- 1. Keyword arguments make the intention of a function call more clear.
+- 2. Use keyword-only arguments to force callers to supply keyword arguments
+    for potentially confusing functions, especially those that accept
+    multiple Boolean flags.
+- 3. Python 3 supports explicit syntax for keyword-only arguments in
+    functions.
+- 4. Python 2 can emulate keyword-only arguments for functions by using
+    **kwargs and manually raising TypeError exceptions.
