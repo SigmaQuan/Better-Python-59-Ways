@@ -214,3 +214,15 @@ Python 3.
     functions.
 - 4. Python 2 can emulate keyword-only arguments for functions by using
     **kwargs and manually raising TypeError exceptions.
+
+
+# Chapter 3: Classes and Inheritance
+
+
+### [Item 22: Prefer helper classes over bookkeeping with dictionaries and tuples](item_22_prefer_helper_classes.py)
+- 1. Avoid making dictionaries with values that are other dictionaries or
+    long tuples.
+- 2. Use namedtuple for lightweight, immutable data containers before you need
+    the flexibility of a full class.
+- 3. Move your bookkeeping code to use multiple helper classes when your
+    internal state dictionaries get complicated.
