@@ -1,4 +1,5 @@
 # Chapter 3: Classes and Inheritance
+import collections
 
 
 # As an object-oriented programming language. Python supports a full range of
@@ -204,7 +205,6 @@ print(average_grade)
 # lets you easily define tiny, immutable data classes.
 
 
-import collections
 Grade = collections.namedtuple('Grade', ('score', 'weight'))
 
 
