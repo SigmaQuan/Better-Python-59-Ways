@@ -226,3 +226,18 @@ Python 3.
     the flexibility of a full class.
 - 3. Move your bookkeeping code to use multiple helper classes when your
     internal state dictionaries get complicated.
+
+
+### [Item 23: Accept functions for simple interfaces instead of classes](item_23_accepts_functions_4_interfaces.py)
+- 1. Instead of defining and instantiating classes, functions are often all
+    you need for simple interfaces between components in Python.
+- 2. References to functions and methods in Python are first class, meaning
+    they can be used in expressions like any other type.
+- 3. The __call__ special method enables instances of a class to be called
+    like plain Python functions.
+- 4. When you need a function to maintain state, consider defining a class
+    that provides the __call__ method instead of defining a stateful closure
+    (see Item 15: "Know how closures interact with variable scope").
+
+
+
