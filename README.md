@@ -240,4 +240,10 @@ Python 3.
     (see Item 15: "Know how closures interact with variable scope").
 
 
+### [Item 24: Use @classmethod polymorphism to construct objects generically](item_24_use_classmethod.py)
+- 1. Python only supports a single constructor per class, the __init__ method.
+- 2. Use @classmethod to define alternative constructors for your classes.
+- 3. Use class method polymorphism to provide generic ways to build and
+     connect concrete subclasses.
+
 
