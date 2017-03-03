@@ -1,6 +1,7 @@
 # Item 24: Use @classmethod polymorphism to construct objects generically
 import os
 import threading
+from tempfile import TemporaryDirectory
 
 
 # In Python, not only do the objects support polymorphism, but the classes do
@@ -124,9 +125,6 @@ def mapreduce(data_dir):
 # Running this function on a set of test input files works great.
 
 
-from tempfile import TemporaryDirectory
-
-
 def write_test_files(tmpdir):
     # ...
     print('write_test_file')
@@ -200,8 +198,72 @@ class PathInputData(GenericInputData):
 
 
 # Similarly, I can make the create_workers helper part of the GenericWorker
-# class.
+# class. Here, I use the input_class parameter, which must be a subclass of
+# GenericInputData, to generate the necessary inputs. I construct instances
+# of the GenericWorker concrete subclass using cls() as a generic constructor.
 
 
-#
+class GenericWorker(object):
+    # ...
+    def map(self):
+        raise NotImplementedError
 
+    def reduce(self, other):
+        raise NotImplementedError
+
+    @classmethod
+    def create_workers(cls, input_class, config):
+        workers = []
+        for input_data in input_class.generate_inputs(config):
+            workers.append(cls(input_data))
+        return workers
+
+
+# Note that the call to input_class.generate_inputs above is the class
+# polymorphism I'm trying to show. you can also see how create_workers calling
+# cls provides an alternate way to construct GenericWorker objects besides
+# using the __init__ method directly.
+
+# The effect on my concrete GenericWorker subclass is nothing more than
+# changing its parent class.
+
+
+class LineCountWorker(GenericWorker):
+    #...
+    def map(self):
+        data = self.input_data.read()
+        self.result = data.count('\n')
+
+    def reduce(self, other):
+        self.result += other.result
+
+
+# And finally, I can rewrite the mapreduce function to be completely generic.
+
+
+def mapreduce(worker_class, input_class, config):
+    workers = worker_class.create_workers(input_class, config)
+    return execute(workers)
+
+
+# Running the new worker on a set of test files produces the same result as
+# the old implementation. The difference is that the mapreduce function
+# requires more parameters so that it can operate generically.
+
+
+with TemporaryDirectory() as tmpdir:
+    write_test_files(tmpdir)
+    config = {'data_dir': tmpdir}
+    result = mapreduce(LineCountWorker, PathInputData, config)
+
+
+# Now you can write other GenericInputData and GenericWorker classes as you
+# wish and not have to rewrite any of the glue code.
+
+
+# Things to remember
+
+# 1. Python only supports a single constructor per class, the __init__ method.
+# 2. Use @classmethod to define alternative constructors for your classes.
+# 3. Use class method polymorphism to provide generic ways to build and
+#     connect concrete subclasses.
