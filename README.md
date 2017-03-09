@@ -247,3 +247,8 @@ Python 3.
      connect concrete subclasses.
 
 
+### [Item 25: Initialize parent classes with super](item_25_init_parent_classes_with_super.py)
+- 1. Python's standard method resolution order (MRO) solves the problems to
+    superclass initialization order and diamond inheritance.
+- 2. Always use the super built-in function to initialize parent classes.
+
