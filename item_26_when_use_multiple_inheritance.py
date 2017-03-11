@@ -1,4 +1,5 @@
 # Item 26: Use multiple inheritance only for mix-in utility classes
+import json
 
 
 # Python is an object-oriented language with built-in facilities for making
@@ -137,4 +138,97 @@ print(root.to_dict())
 # }
 
 
-#
+# By defining BinaryTreeWithParent._traverse, I've also enabled any class that
+# has an attribute of type BinaryTreeWithParent to automatically work with
+# ToDictMixin.
+
+class NamedSubTree(ToDictMixin):
+    def __init__(self, name, tree_with_parent):
+        self.name = name
+        self.tree_with_parent = tree_with_parent
+
+
+my_tree = NamedSubTree('foobar', root.left.right)
+print(my_tree.to_dict())  # No infinite loop
+# {'name': 'foobar',
+#  'tree_with_parent': {'parent': 7,
+#                       'right': None,
+#                       'left': None,
+#                       'value': 9
+#                       }
+#  }
+
+
+# Mix-ins can also be composed together. For example, say you want a mix-in
+# that provides generic JSON serialization for any class. You can do this by
+# assuming that a class provides a to_dict method (which may or may not be
+# provided by the ToDictMixin class).
+
+
+class JsonMixin(object):
+    @classmethod
+    def from_json(cls, data):
+        kwargs = json.loads(data)
+        return cls(**kwargs)
+
+    def to_json(self):
+        return json.dumps(self.to_dict())
+
+
+# Note now the JsonMixin class defines both instance methods and class
+# methods. Mix-ins let you add either kind of behavior. In this example, the
+# only requirements of the JsonMixin are that the class has a to_dict method
+# and its __init__ method takes keyword arguments (see Item 19: "Provide
+# optional behavior with keyword arguments").
+
+# This mix-in makes it simple to create hierarchies of utility classes that
+# can be serialized to and from JSON with little boilerplate. For example,
+# here I have a hierarchy of data classes representing parts of a datacenter
+# topology:
+
+
+class DatacenterRack(ToDictMixin, JsonMixin):
+    def __init__(self, switch=None, machines=None):
+        self.switch = Switch(**switch)
+        self.machines = [Machine(**kwargs) for kwargs in machines]
+
+
+class Switch(ToDictMixin, JsonMixin):
+    # ..
+
+
+class Machine(ToDictMixin, JsonMixin):
+    # ..
+
+
+# Serializing these classes to and from JSON is simple. Here, I verify that
+# the data is able to be sent round-trip through serializing and
+# de-serializing:
+
+
+serialized = """{
+    "switch": {"ports": 5, "speed": 1e9},
+    "machines": [
+        {"cores": 8, "ram": 32e9, "disk": 5e12},
+        {"cores": 4, "ram": 16e9, "disk": 1e12},
+        {"cores": 2, "ram": 4e9, "disk": 500e9}
+    ]
+}"""
+
+
+deserialized = DatacenterRack.from_json(serialized)
+roundtrip = deserialized.to_json()
+assert json.loads(serialized) == json.loads(roundtrip)
+
+
+# When you use mix-ins like this, it's also fine if the class already inherits
+# from JsonMixin higher up in the object hierarchy. The resulting class will
+# behave the same way.
+
+
+# Things to remember
+# 1. Avoid using multiple inheritance if mix-in classes can achieve the same
+#    outcome.
+# 2. Use pluggable behaviors at the instance level to provide per-class
+#    customization when mix-in classes may require it.
+# 3. Compose mix-ins to create complex functionality from simple behaviors.
