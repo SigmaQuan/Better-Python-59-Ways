@@ -187,18 +187,18 @@ class JsonMixin(object):
 # topology:
 
 
-class DatacenterRack(ToDictMixin, JsonMixin):
-    def __init__(self, switch=None, machines=None):
-        self.switch = Switch(**switch)
-        self.machines = [Machine(**kwargs) for kwargs in machines]
-
-
-class Switch(ToDictMixin, JsonMixin):
-    # ..
-
-
-class Machine(ToDictMixin, JsonMixin):
-    # ..
+# class DatacenterRack(ToDictMixin, JsonMixin):
+#     def __init__(self, switch=None, machines=None):
+#         self.switch = Switch(**switch)
+#         self.machines = [Machine(**kwargs) for kwargs in machines]
+#
+#
+# class Switch(ToDictMixin, JsonMixin):
+#     # ..
+#
+#
+# class Machine(ToDictMixin, JsonMixin):
+#     # ..
 
 
 # Serializing these classes to and from JSON is simple. Here, I verify that
@@ -216,9 +216,9 @@ serialized = """{
 }"""
 
 
-deserialized = DatacenterRack.from_json(serialized)
-roundtrip = deserialized.to_json()
-assert json.loads(serialized) == json.loads(roundtrip)
+# deserialized = DatacenterRack.from_json(serialized)
+# roundtrip = deserialized.to_json()
+# assert json.loads(serialized) == json.loads(roundtrip)
 
 
 # When you use mix-ins like this, it's also fine if the class already inherits
