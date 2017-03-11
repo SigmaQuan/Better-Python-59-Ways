@@ -252,3 +252,10 @@ Python 3.
     superclass initialization order and diamond inheritance.
 - 2. Always use the super built-in function to initialize parent classes.
 
+
+### [Item 26: Use multiple inheritance only for mix-in utility classes](item_26_when_use_multiple_inheritance.py)
+- 1. Avoid using multiple inheritance if mix-in classes can achieve the same
+    outcome.
+- 2. Use pluggable behaviors at the instance level to provide per-class 
+    customization when mix-in classes may require it.
+- 3. Compose mix-ins to create complex functionality from simple behaviors.
