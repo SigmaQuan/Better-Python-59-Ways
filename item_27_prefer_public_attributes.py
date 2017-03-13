@@ -109,6 +109,13 @@ print(baz.__dict__)
 # visibility? The simplest answer is one often-quoted motto of Python:
 # "We are all consenting adults here." Python programmers believe that the
 # benefits of being open outweigh the downsides of being closed.
+"""
+Nothing is really private in python. No class or class instance can keep you
+away from all what's inside (this makes introspection possible and powerful).
+Python trusts you. It says "hey, if you want to go poking around in dark
+places, I'm gonna trust that you've got a good reason and you're not making
+trouble." After all, we're all consenting adults here.
+"""
 
 # Beyond that, having the ability to hook language features like attribute
 # access (see Item 32: "Use __getattr__, __getattribute__, and __setattr__ for
