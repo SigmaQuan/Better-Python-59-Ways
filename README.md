@@ -259,3 +259,14 @@ Python 3.
 - 2. Use pluggable behaviors at the instance level to provide per-class 
     customization when mix-in classes may require it.
 - 3. Compose mix-ins to create complex functionality from simple behaviors.
+
+
+### [Things to remember](item_27_prefer_public_attributes.py)
+- 1. Private attributes aren't rigorously enforced by the Python compiler.
+- 2. Plan from the beginning to allow subclass to do more with your internal
+    APIs and attributes instead of locking them out by default.
+- 3. Use documentation of protected fields to guide subclass instead of trying
+    to force access control with private attributes.
+- 4. Only consider using private attributes to avoid naming conflicts with
+    subclasses that are out of your control.
+
