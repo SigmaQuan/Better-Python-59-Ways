@@ -261,7 +261,7 @@ Python 3.
 - 3. Compose mix-ins to create complex functionality from simple behaviors.
 
 
-### [Things to remember](item_27_prefer_public_attributes.py)
+### [Item 27: Prefer public attributes over private ones](item_27_prefer_public_attributes.py)
 - 1. Private attributes aren't rigorously enforced by the Python compiler.
 - 2. Plan from the beginning to allow subclass to do more with your internal
     APIs and attributes instead of locking them out by default.
