@@ -270,3 +270,11 @@ Python 3.
 - 4. Only consider using private attributes to avoid naming conflicts with
     subclasses that are out of your control.
 
+### [Item 28: Inherit from collections.abc for custom container types](item_28_inherit_from_collections_abc.py)
+- 1. Inherit directly from Python's container types (like list or dict) for
+    simple use cases.
+- 2. Beware of the large number of methods required to implement custom
+    container types correctly.
+- 3. Have your custom container types inherit from the interface defined in
+    collections.abc to ensure that your classes match required interfaces
+    and behaviors.
