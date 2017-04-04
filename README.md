@@ -278,3 +278,13 @@ Python 3.
 - 3. Have your custom container types inherit from the interface defined in
     collections.abc to ensure that your classes match required interfaces
     and behaviors.
+
+### [Item 29: Use plain attributes instead of get and set methods](item_29_use_plain_attributes.py)
+# 1. Define new class interfaces using simple public attributes, and avoid set
+#     and get methods.
+# 2. Use @property to define special behavior when attributes are accessed on
+#     your objects, if necessary.
+# 3. Follow the rule of least surprise and void weird side effects in your
+#    @property methods.
+# 4. Ensure that @property methods are fast; do slow or complex work using
+#    normal methods.
