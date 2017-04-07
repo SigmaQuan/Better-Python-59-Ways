@@ -294,3 +294,11 @@ Python 3.
 - 2. Make incremental progress toward better data models by using @property.
 - 3. Consider refactoring a class and all call sites when you find yourself
      using @property too heavily.
+
+### [Item 31: Use descriptors for reusable @property methods](item_31_use_descriptors.py)
+- 1. Reuse the behavior and validation of @property methods by defining your
+     own descriptor classes.
+- 2. Use WeakKeyDictionary to ensure that your descriptor classes don't cause
+     memory leaks.
+- 3. Don't get bogged down trying to understand exactly how __getattribute__
+     uses the descriptor protocol for getting and setting attributes.
