@@ -302,3 +302,15 @@ Python 3.
      memory leaks.
 - 3. Don't get bogged down trying to understand exactly how __getattribute__
      uses the descriptor protocol for getting and setting attributes.
+     
+
+### [Item_32_Use __getattr__, __getattribute__, and __setattr__ for lazy attributes](item_32_use_getattr.py)
+- 1. Use __getattr__ and __setattr__ to lazily load and save attributes for an
+     object.
+- 2. Understand that __getattr__ only gets called once when accessing a
+     missing attribute, whereas __getattribute__ gets called every time an
+     attribute is accessed.
+- 3. Avoid infinite recursion in __getattribute__ and __setattr__ by using
+     methods from super() (i.e., the object class) to access instance
+     attributes directly.
+     
