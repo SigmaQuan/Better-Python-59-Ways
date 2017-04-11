@@ -302,7 +302,6 @@ Python 3.
      memory leaks.
 - 3. Don't get bogged down trying to understand exactly how __getattribute__
      uses the descriptor protocol for getting and setting attributes.
-     
 
 ### [Item_32_Use __getattr__, __getattribute__, and __setattr__ for lazy attributes](item_32_use_getattr.py)
 - 1. Use __getattr__ and __setattr__ to lazily load and save attributes for an
@@ -313,4 +312,11 @@ Python 3.
 - 3. Avoid infinite recursion in __getattribute__ and __setattr__ by using
      methods from super() (i.e., the object class) to access instance
      attributes directly.
-     
+
+### [Item 33: Validate subclass with metaclass](item_33_validate_subclass.py)
+- 1. Use metaclasses to ensure that subclass are well formed at the time they 
+     are defined, before objects of their type are constructed.
+- 2. Metaclass have slightly different syntax in Python 2 vs. Python 3.
+- 3. The __new__ method of metaclasses is run after the class statement's
+     entire body has been processed.
+
