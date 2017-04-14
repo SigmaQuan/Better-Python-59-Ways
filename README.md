@@ -320,7 +320,13 @@ Python 3.
 - 3. The __new__ method of metaclasses is run after the class statement's
      entire body has been processed.
 
-### []()
+### [Item 34: Register class existence with metaclass](item_34_register_class_existence.py)
+- 1. Class registration is a helpful pattern for building modular Python
+     programs.
+- 2. Metaclass let you run registration code automatically each time your
+     base class is subclassed in a program.
+- 3. Using metaclass for class registration avoids errors by ensuring that
+     you never miss a registration call.
 
 ### []()
 
