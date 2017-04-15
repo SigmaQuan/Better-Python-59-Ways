@@ -328,7 +328,13 @@ Python 3.
 - 3. Using metaclass for class registration avoids errors by ensuring that
      you never miss a registration call.
 
-### []()
+### [Item 35: Annotate class attributes with metaclass](item_35_annotate_class_attributes.py)
+- 1. Metaclass enable you to modify a class's attributes before the class is
+     fully defined.
+- 2. Descriptors and metaclasses make a powerful combination for declarative
+     behavior and runtime introspection.
+- 3. You can avoid both memory leaks and the weakref module by using
+     metaclasses along with descriptors.
 
 ### []()
 
