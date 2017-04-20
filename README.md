@@ -336,7 +336,13 @@ Python 3.
 - 3. You can avoid both memory leaks and the weakref module by using
      metaclasses along with descriptors.
 
-### []()
+### [Item 36: use subprocess to manage child processes](item_36_use_subprocess.py)
+- 1. Use the subprocess to run child processes and manage their input and
+    output streams.
+- 2. Child processes run in parallel with the Python interpreter, enabling you
+    to maximize your CPU usage.
+- 3. Use the timeout parameter with communicate to avoid deadlocks and hanging
+    child processes.
 
 ### []()
 
