@@ -344,7 +344,13 @@ Python 3.
 - 3. Use the timeout parameter with communicate to avoid deadlocks and hanging
     child processes.
 
-### []()
+### [Item 37: Use threads for blocking I/O, avoid for parallelism](item_37_use_threads.py)
+- 1. Python threads can't bytecode in parallel on multiple CPU cores because
+     of the global interpreter lock (GIL).
+- 2. Python threads are still useful despite the GIL because they provide an
+     easy way to do multiple things at seemingly the same time.
+- 3. Use Python threads to make multiple system calls in parallel. This allows
+     you to do blocking I/O at the same time as computation.
 
 ### []()
 
