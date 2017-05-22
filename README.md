@@ -360,7 +360,13 @@ Python 3.
 - 3. The lock class in the threading built-in module is Python's standard
      mutual exclusion lock implementation.
 
-### []()
+### [Item 39: Use queue to coordinate work between threads](item_39_use_queue.py)
+- 1. Pipelines are a great way to organize sequences of work that run
+     concurrently using multiple Python threads.
+- 2. Be aware of the many problems in building concurrent pipelines: busy
+     waiting, stopping workers, and memory explosion.
+- 3. The Queue class has all of the facilities you need to build robust
+     pipelines: blocking operations, buffer sizes, and joining.
 
 ### []()
 
