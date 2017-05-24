@@ -368,7 +368,14 @@ Python 3.
 - 3. The Queue class has all of the facilities you need to build robust
      pipelines: blocking operations, buffer sizes, and joining.
 
-### []()
+### [Item 40: Consider coroutines to run many functions concurrently](item_40_consider_coroutines.py)
+- 1. Coroutines provide an efficient way to run tens of thousands of functions
+    seemingly at the same time.
+- 2. Within a generator, the value of the yield expression will be whatever
+    value was passed to the generator's send method from the exterior code.
+- 3. Coroutines give you a powerful tool for separating the core logic of your
+    program from its interaction with the surrounding environment.
+- 4. Python 2 doesn't support yield from or returning values from generators.
 
 ### []()
 
