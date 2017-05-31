@@ -377,7 +377,17 @@ Python 3.
     program from its interaction with the surrounding environment.
 - 4. Python 2 doesn't support yield from or returning values from generators.
 
-### []()
+### [Item 41: Consider concurrent.futures for true parallelism](item_41_consider+concurrent_futures.py)
+- 1. Moving CPU bottlenecks to C-extension modules can be an effective way to
+    improve performance while maximizing your investment in Python code.
+    However, the cost of doing so is high and may introduce bugs.
+- 2. The multiprocessing module provides powerful tools that can parallelize
+    certain types of Python computation with minimal effort.
+- 3. The power of multiprocessing is best accessed through the
+    concurrent.futures built-in module and its simple ProcessPoolExecutor
+    class.
+- 4. The advanced parts of the multiprocessing module should be avoided
+    because they are so complex.
 
 ### []()
 
