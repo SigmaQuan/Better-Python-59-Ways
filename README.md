@@ -389,7 +389,13 @@ Python 3.
 - 4. The advanced parts of the multiprocessing module should be avoided
     because they are so complex.
 
-### []()
+### [Item 42: Define function decorators with functools.wraps](item_42_define_function_decorators.py)
+- 1. Decorators are Python syntax for allowing one function to modify another
+    function at runtime.
+- 2. Using decorators can cause strange behaviors in tools that do
+    introspection, such as debuggers.
+- 3. Use the wraps decorator from the functools built-in module when you
+    define your own decorators to avoid any issues.
 
 ### []()
 
