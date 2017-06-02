@@ -397,7 +397,14 @@ Python 3.
 - 3. Use the wraps decorator from the functools built-in module when you
     define your own decorators to avoid any issues.
 
-### []()
+### [Item 43: Consider contextlib and with statements for reusable try/finally behavior](item_43_consier_contextlib.py)
+- 1. The with statement allows you to reuse logic from try/finally blocks and
+    reduce visual noise.
+- 2. The contextlib built-in module provides a contextmanager decorator that
+    makes it easy to use your own functions in with statements.
+- 3. The value yielded by context managers is supplied to the as part of the
+    with statement. It's useful for letting your code directly access the
+    cause of the special context.
 
 ### []()
 
