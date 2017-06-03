@@ -407,11 +407,11 @@ Python 3.
     cause of the special context.
 
 ### [Item 44: Make pickle reliable with copyreg](item_44_make_pickle_reliable.py)
-－ 1. The pickle built-in module is only useful for serializing and
+- 1. The pickle built-in module is only useful for serializing and
     de-serializing objects between trusted programs.
-－ 2. The pickle module may break down when used for more than trivial use
+- 2. The pickle module may break down when used for more than trivial use
     cases.
-－ 3. Use the copyreg built-in module with pickle to add missing attributes
+- 3. Use the copyreg built-in module with pickle to add missing attributes
     values, allow versioning of classes, and provide stable import paths.
 
 ### []()
