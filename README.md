@@ -414,7 +414,12 @@ Python 3.
 - 3. Use the copyreg built-in module with pickle to add missing attributes
     values, allow versioning of classes, and provide stable import paths.
 
-### []()
+### [Item 45: Use datetime instead of time for local clocks](item_45_use_date_time.py)
+- 1. Avoid using the time module for translating between different time zones.
+- 2. Use the datetime built-in module along with the pytz module to reliably
+    convert between times in different time zones.
+- 3. Always represent time in UTC and do conversations to local time as the
+    final step before presentation.
 
 ### []()
 
