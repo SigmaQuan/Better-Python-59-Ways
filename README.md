@@ -421,7 +421,9 @@ Python 3.
 - 3. Always represent time in UTC and do conversations to local time as the
     final step before presentation.
 
-### []()
+### [Item 46: Use built-in algorithms and data structures](item_46_use_built_in_algorithm.py)
+- 1. Use Python's built-in modules for algorithms and data structures.
+- 2. Don't re-implement this functionality yourself. It's hard to get right.
 
 ### []()
 
