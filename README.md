@@ -425,7 +425,11 @@ Python 3.
 - 1. Use Python's built-in modules for algorithms and data structures.
 - 2. Don't re-implement this functionality yourself. It's hard to get right.
 
-### []()
+### [Item 47: Use decimal when precision ia paramount](item_47_use_decimal.py)
+- 1. Python has built-in types and classes in modules that can represent
+    practically every type of numerical value.
+- 2. The Decimal class is ideal for situations that require high precision and
+    exact rounding behavior, such as computations of monetary values.
 
 ### []()
 
