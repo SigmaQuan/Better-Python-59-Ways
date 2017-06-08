@@ -431,7 +431,13 @@ Python 3.
 - 2. The Decimal class is ideal for situations that require high precision and
     exact rounding behavior, such as computations of monetary values.
 
-### []()
+### [Item 48: Know where to find community built modules](item_48_communit_built_modules.py)
+- 1. The Python Package Index (PyPI) contains a wealth of common packages
+    that are built and maintained by the Python community.
+- 2. pip is the command-line to use for installing packages from PyPI.
+- 3. pip is installed by default in Python 3.4 and above; you must install it
+    yourself for older versions.
+- 4. The majority of PyPI modules are free and open source software.
 
 ### []()
 
