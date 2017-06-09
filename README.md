@@ -439,7 +439,16 @@ Python 3.
     yourself for older versions.
 - 4. The majority of PyPI modules are free and open source software.
 
-### []()
+### [Item 49: Write docstrings for every function, class and module](item_49_write_docstrings_4_everything.py)
+- 1. Write documentation for every module, class and function using
+    docstrings. Keep them up to date as your code changes.
+- 2. For modules: introduce the contents of the module and any important
+    classes or functions all users should know about.
+- 3. For classes: document behavior, important attributes, and subclass
+    behavior in the docstring following the class statement.
+- 4. For functions and methods: document every argument, returned value,
+    raised exception, and other behaviors in the docstring following the
+    def statement.
 
 ### []()
 
