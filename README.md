@@ -450,7 +450,21 @@ Python 3.
     raised exception, and other behaviors in the docstring following the
     def statement.
 
-### []()
+### [Item 50: Use packages to organize modules and provide stable APIs](item_50_use_packages.py)
+- 1. Packages in Python are modules that contain other modules. Packages allow
+    you to organize your code into separate, non-conflicting namespaces with
+    unique absolute module names.
+- 2. Simple package are defined by adding an __init__.py file to a directory
+    that contains other source files. These files become that child modules
+    of the directory's package. Package directories may also contain other
+    packages.
+- 3. You can provide an explict API for a module by listing its publicly
+    visible name in its __all__ special attribute.
+- 4. You can hide a package's internal implementation by only importing public
+    names in the package's __init__.py file or by naming internal-only
+    members with a leading underscore.
+- 5. When collaborating within a single team or on a single codebase, using
+    __all__ for explicit APIs is probably unnecessary.
 
 ### []()
 
