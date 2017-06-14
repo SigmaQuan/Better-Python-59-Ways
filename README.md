@@ -476,7 +476,13 @@ Python 3.
 - 4. Intermediate root exceptions let you add more specific types of
     exceptions in the future without breaking your API consumers.
 
-### []()
+### [Item 52: Know how to break circular dependencies](item_52_break_circular_dependencies.py)
+- 1. Circular dependencies happen when two modules must call into each other
+    at import time. They can cause your program to crash at startup.
+- 2. The best way to break a circular dependency is refactoring mutual
+    dependencies into a separate module at the bottom of the dependency tree.
+- 3. Dynamic imports are the simplest solution for breaking a circular
+    dependency between modules while minimizing refactoring and complexity.
 
 ### []()
 
