@@ -466,7 +466,15 @@ Python 3.
 - 5. When collaborating within a single team or on a single codebase, using
     __all__ for explicit APIs is probably unnecessary.
 
-### []()
+### [Item 51: Define a root exception to insulate callers from APIs](item_51_define_a_root_exception.py)
+- 1. Defining root exceptions for your modules allows API consumers to
+    insulate themselves from your API.
+- 2. Catching root exceptions can help you find bugs in code that consumes an
+    API.
+- 3. Catching the Python Exception base class can help you find bugs in API
+    implementations.
+- 4. Intermediate root exceptions let you add more specific types of
+    exceptions in the future without breaking your API consumers.
 
 ### []()
 
