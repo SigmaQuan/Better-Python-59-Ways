@@ -484,7 +484,17 @@ Python 3.
 - 3. Dynamic imports are the simplest solution for breaking a circular
     dependency between modules while minimizing refactoring and complexity.
 
-### []()
+### [Item 53: Use virtual environments for isolated and reproducible dependencies](item_53_use_virtual_environments.py)
+- 1. Virtual environment allow you to use pip to install many different
+    versions of the same package on the same machine without conflicts.
+- 2. Virtual environments are created with pyvenv, enabled with source
+    bin/activate, and disabled with deactivate.
+- 3. You can dump all of the requirements of an environment with pip freeze.
+    You can reproduce the environment by supplying the requirements.txt file
+    to pip install -r.
+- 4. In versions of Python before 3.4, the pyvenv tool must be downloaded and
+    installed separately. The command-line tool is called virtualenv instead
+    of pyvenv.
 
 ### []()
 
