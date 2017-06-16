@@ -216,7 +216,7 @@ Python 3.
     **kwargs and manually raising TypeError exceptions.
 
 
-# Chapter 3: Classes and Inheritance
+## Chapter 3: Classes and Inheritance
 
 
 ### [Item 22: Prefer helper classes over bookkeeping with dictionaries and tuples](item_22_prefer_helper_classes.py)
@@ -270,6 +270,7 @@ Python 3.
 - 4. Only consider using private attributes to avoid naming conflicts with
     subclasses that are out of your control.
 
+
 ### [Item 28: Inherit from collections.abc for custom container types](item_28_inherit_from_collections_abc.py)
 - 1. Inherit directly from Python's container types (like list or dict) for
     simple use cases.
@@ -278,6 +279,10 @@ Python 3.
 - 3. Have your custom container types inherit from the interface defined in
     collections.abc to ensure that your classes match required interfaces
     and behaviors.
+
+
+## Chapter 4: Metaclasses and Attributes
+
 
 ### [Item 29: Use plain attributes instead of get and set methods](item_29_use_plain_attributes.py)
 - 1. Define new class interfaces using simple public attributes, and avoid set
@@ -289,11 +294,13 @@ Python 3.
 - 4. Ensure that @property methods are fast; do slow or complex work using
     normal methods.
 
+
 ### [Item 30: Consider @property instead of refactoring attributes](item_30_consider_property.py)
 - 1. Use @property to give existing instance attributes new functionality.
 - 2. Make incremental progress toward better data models by using @property.
 - 3. Consider refactoring a class and all call sites when you find yourself
      using @property too heavily.
+
 
 ### [Item 31: Use descriptors for reusable @property methods](item_31_use_descriptors.py)
 - 1. Reuse the behavior and validation of @property methods by defining your
@@ -302,6 +309,7 @@ Python 3.
      memory leaks.
 - 3. Don't get bogged down trying to understand exactly how __getattribute__
      uses the descriptor protocol for getting and setting attributes.
+
 
 ### [Item_32_Use __getattr__, __getattribute__, and __setattr__ for lazy attributes](item_32_use_getattr.py)
 - 1. Use __getattr__ and __setattr__ to lazily load and save attributes for an
@@ -313,12 +321,14 @@ Python 3.
      methods from super() (i.e., the object class) to access instance
      attributes directly.
 
+
 ### [Item 33: Validate subclass with metaclass](item_33_validate_subclass.py)
 - 1. Use metaclasses to ensure that subclass are well formed at the time they 
      are defined, before objects of their type are constructed.
 - 2. Metaclass have slightly different syntax in Python 2 vs. Python 3.
 - 3. The __new__ method of metaclasses is run after the class statement's
      entire body has been processed.
+
 
 ### [Item 34: Register class existence with metaclass](item_34_register_class_existence.py)
 - 1. Class registration is a helpful pattern for building modular Python
@@ -328,6 +338,7 @@ Python 3.
 - 3. Using metaclass for class registration avoids errors by ensuring that
      you never miss a registration call.
 
+
 ### [Item 35: Annotate class attributes with metaclass](item_35_annotate_class_attributes.py)
 - 1. Metaclass enable you to modify a class's attributes before the class is
      fully defined.
@@ -335,6 +346,10 @@ Python 3.
      behavior and runtime introspection.
 - 3. You can avoid both memory leaks and the weakref module by using
      metaclasses along with descriptors.
+
+
+## Chapter 5: Concurrency and parallelism
+
 
 ### [Item 36: use subprocess to manage child processes](item_36_use_subprocess.py)
 - 1. Use the subprocess to run child processes and manage their input and
@@ -344,6 +359,7 @@ Python 3.
 - 3. Use the timeout parameter with communicate to avoid deadlocks and hanging
     child processes.
 
+
 ### [Item 37: Use threads for blocking I/O, avoid for parallelism](item_37_use_threads.py)
 - 1. Python threads can't bytecode in parallel on multiple CPU cores because
      of the global interpreter lock (GIL).
@@ -351,6 +367,7 @@ Python 3.
      easy way to do multiple things at seemingly the same time.
 - 3. Use Python threads to make multiple system calls in parallel. This allows
      you to do blocking I/O at the same time as computation.
+
 
 ### [Item 38: Use lock to prevent data races in threads](item_38_use_lock.py)
 - 1. Even though Python has a global interpreter lock, you're still
@@ -360,6 +377,7 @@ Python 3.
 - 3. The lock class in the threading built-in module is Python's standard
      mutual exclusion lock implementation.
 
+
 ### [Item 39: Use queue to coordinate work between threads](item_39_use_queue.py)
 - 1. Pipelines are a great way to organize sequences of work that run
      concurrently using multiple Python threads.
@@ -367,6 +385,7 @@ Python 3.
      waiting, stopping workers, and memory explosion.
 - 3. The Queue class has all of the facilities you need to build robust
      pipelines: blocking operations, buffer sizes, and joining.
+
 
 ### [Item 40: Consider coroutines to run many functions concurrently](item_40_consider_coroutines.py)
 - 1. Coroutines provide an efficient way to run tens of thousands of functions
@@ -376,6 +395,7 @@ Python 3.
 - 3. Coroutines give you a powerful tool for separating the core logic of your
     program from its interaction with the surrounding environment.
 - 4. Python 2 doesn't support yield from or returning values from generators.
+
 
 ### [Item 41: Consider concurrent.futures for true parallelism](item_41_consider+concurrent_futures.py)
 - 1. Moving CPU bottlenecks to C-extension modules can be an effective way to
@@ -389,6 +409,10 @@ Python 3.
 - 4. The advanced parts of the multiprocessing module should be avoided
     because they are so complex.
 
+
+## Chapter 6: Built-in Modules
+
+
 ### [Item 42: Define function decorators with functools.wraps](item_42_define_function_decorators.py)
 - 1. Decorators are Python syntax for allowing one function to modify another
     function at runtime.
@@ -396,6 +420,7 @@ Python 3.
     introspection, such as debuggers.
 - 3. Use the wraps decorator from the functools built-in module when you
     define your own decorators to avoid any issues.
+
 
 ### [Item 43: Consider contextlib and with statements for reusable try/finally behavior](item_43_consier_contextlib.py)
 - 1. The with statement allows you to reuse logic from try/finally blocks and
@@ -406,6 +431,7 @@ Python 3.
     with statement. It's useful for letting your code directly access the
     cause of the special context.
 
+
 ### [Item 44: Make pickle reliable with copyreg](item_44_make_pickle_reliable.py)
 - 1. The pickle built-in module is only useful for serializing and
     de-serializing objects between trusted programs.
@@ -414,6 +440,7 @@ Python 3.
 - 3. Use the copyreg built-in module with pickle to add missing attributes
     values, allow versioning of classes, and provide stable import paths.
 
+
 ### [Item 45: Use datetime instead of time for local clocks](item_45_use_date_time.py)
 - 1. Avoid using the time module for translating between different time zones.
 - 2. Use the datetime built-in module along with the pytz module to reliably
@@ -421,15 +448,18 @@ Python 3.
 - 3. Always represent time in UTC and do conversations to local time as the
     final step before presentation.
 
+
 ### [Item 46: Use built-in algorithms and data structures](item_46_use_built_in_algorithm.py)
 - 1. Use Python's built-in modules for algorithms and data structures.
 - 2. Don't re-implement this functionality yourself. It's hard to get right.
+
 
 ### [Item 47: Use decimal when precision ia paramount](item_47_use_decimal.py)
 - 1. Python has built-in types and classes in modules that can represent
     practically every type of numerical value.
 - 2. The Decimal class is ideal for situations that require high precision and
     exact rounding behavior, such as computations of monetary values.
+
 
 ### [Item 48: Know where to find community built modules](item_48_communit_built_modules.py)
 - 1. The Python Package Index (PyPI) contains a wealth of common packages
@@ -438,6 +468,10 @@ Python 3.
 - 3. pip is installed by default in Python 3.4 and above; you must install it
     yourself for older versions.
 - 4. The majority of PyPI modules are free and open source software.
+
+
+## Chapter 7: Collaboration
+
 
 ### [Item 49: Write docstrings for every function, class and module](item_49_write_docstrings_4_everything.py)
 - 1. Write documentation for every module, class and function using
@@ -449,6 +483,7 @@ Python 3.
 - 4. For functions and methods: document every argument, returned value,
     raised exception, and other behaviors in the docstring following the
     def statement.
+
 
 ### [Item 50: Use packages to organize modules and provide stable APIs](item_50_use_packages.py)
 - 1. Packages in Python are modules that contain other modules. Packages allow
@@ -466,6 +501,7 @@ Python 3.
 - 5. When collaborating within a single team or on a single codebase, using
     __all__ for explicit APIs is probably unnecessary.
 
+
 ### [Item 51: Define a root exception to insulate callers from APIs](item_51_define_a_root_exception.py)
 - 1. Defining root exceptions for your modules allows API consumers to
     insulate themselves from your API.
@@ -476,6 +512,7 @@ Python 3.
 - 4. Intermediate root exceptions let you add more specific types of
     exceptions in the future without breaking your API consumers.
 
+
 ### [Item 52: Know how to break circular dependencies](item_52_break_circular_dependencies.py)
 - 1. Circular dependencies happen when two modules must call into each other
     at import time. They can cause your program to crash at startup.
@@ -483,6 +520,7 @@ Python 3.
     dependencies into a separate module at the bottom of the dependency tree.
 - 3. Dynamic imports are the simplest solution for breaking a circular
     dependency between modules while minimizing refactoring and complexity.
+
 
 ### [Item 53: Use virtual environments for isolated and reproducible dependencies](item_53_use_virtual_environments.py)
 - 1. Virtual environment allow you to use pip to install many different
@@ -496,7 +534,17 @@ Python 3.
     installed separately. The command-line tool is called virtualenv instead
     of pyvenv.
 
-### []()
+
+## Chapter 8: Production
+
+
+### [Item 54: Consider module-scoped code to configure deployment environments](item_54_consier_module_scoped_code.py)
+- 1. Programs often need to run in multiple deployment environments that each
+    have unique assumptions and configurations.
+- 2. You can tailor a module's contents to different deployment environments
+    by using normal Python statements in module scope.
+- 3. Module contents can be the product of any external condition, including
+    host introspection through the sys and os modules.
 
 ### []()
 
