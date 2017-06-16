@@ -547,7 +547,18 @@ Python 3.
     host introspection through the sys and os modules.
 
 
-### []()
+### [Item 55: Use repr strings for debugging output](item_55_use_repr_strings.py)
+- 1. Calling print on built-in Python types will produce the human-readable
+    string version of a value, which hides type information.
+- 2. Calling repr on built-in Python types will produce the printable string
+    version of a value. These repr strings could be passed to the eval
+    built-in function to get back the original value.
+- 3. %s in format strings will produce human-readable strings like str.%r will
+    produce printable strings like repr.
+- 4. You can define the __repr__ method to customize the printable
+    representation of a class and provide more detailed debugging
+    information.
+- 5. You can reach into any object's __dict__ attribute to view its internals.
 
 
 ### []()
