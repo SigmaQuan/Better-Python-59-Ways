@@ -561,7 +561,15 @@ Python 3.
 - 5. You can reach into any object's __dict__ attribute to view its internals.
 
 
-### []()
+### [Item 56: Test everything with unittest](item_56_unittest.py)
+- 1. The only way to have confidence in a Python program is to write tests.
+- 2. The unittest built-in module provides most of the facilities you'll need
+    to write good tests.
+- 3. You can define tests by subclassing TestCase and defining one method per
+    behavior you'd like to test. Test methods on TestCase classes must start
+    with the word test.
+- 4. It's important to write both unit tests (for isolated functionality) and
+    integration tests (for modules that interact).
 
 
 ### []()
