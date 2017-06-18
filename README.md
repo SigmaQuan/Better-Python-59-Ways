@@ -163,7 +163,7 @@ Python 3.
 ### [Item 17: Be defensive when iterating over arguments](item_17_be_defensive.py)
 - 1. Beware of functions that iterate over input arguments multiple times. If
      these arguments are iterators, you may see strange behavior and missing 
--     values.
+     values.
 - 2. Python's iterator protocol defines how containers and iterators interact
      with the iter and next built-in functions, for loops, and related 
      expression.
@@ -572,7 +572,14 @@ Python 3.
     integration tests (for modules that interact).
 
 
-### []()
+### [Item 57： Consider interactive debugging with pdb](item_57_pdb.py)
+ 1. You can initiate the Python interactive debugger at a point of interest
+    directly in your program with the import pdb; pdb.set_trace() statements.
+ 2. The Python debugger prompt is a full Python shell that lets you inspect
+    and modify the state of a running program.
+ 3. pdb shell commands let you precisely control program execution, allowing
+    you to alternate between inspecting program state and progressing program
+    execution.
 
 
 ### []()
