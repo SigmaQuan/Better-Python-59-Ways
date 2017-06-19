@@ -582,7 +582,14 @@ Python 3.
     execution.
 
 
-### []()
-
+### [item 58: Profile before optimizing](item_58_profile_before_optimizing.py)
+- 1. It's import to profile Python programs before optimizing because the
+    source of slowdowns is often obscure.
+- 2. Use the cProfile module instead of the profile module because it provides
+    more accurate profiling information.
+- 3. The Profile object's runcall method provides everything you need to
+    profile a tree of function calls in isolation.
+- 4. The Stats object lets you select and print the subset of profiling
+    information you need to see to understand your program's performance.
 
 ### []()
