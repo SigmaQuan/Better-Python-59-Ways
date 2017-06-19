@@ -592,4 +592,11 @@ Python 3.
 - 4. The Stats object lets you select and print the subset of profiling
     information you need to see to understand your program's performance.
 
-### []()
+### [Item 59: Use tracemalloc to understand memory usage and leaks](item_59_use_tracemalloc.py)
+- 1. It can be difficult to understand how Python programs use and leak
+    memory.
+- 2. The gc module can help you understand which objects exist, but it has no
+    information about how they were allocated.
+- 3. The tracemalloc built-in module provides powerful tools for understanding
+    the source of memory usage.
+- 4. tracemalloc is only available in Python 3.4 and above.
