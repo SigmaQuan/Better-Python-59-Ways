@@ -353,13 +353,13 @@ class Grid(object):
 def live_a_generation(grid, sim):
     progeny = Grid(grid.height, grid.width)
     item = next(sim)
-    while item is (not TICK):
+    while item is not TICK:
         if isinstance(item, Query):
             state = grid.query(item.y, item.x)
             item = sim.send(state)
         else:
             progeny.assign(item.y, item.x, item.state)
-            item.next(sim)
+            item = next(sim)
     return progeny
 
 
@@ -379,7 +379,6 @@ print(grid)
 # --***----
 # ---------
 # ---------
-
 
 # Now I can progress this grid forward one generation at a time. You can see
 # how the glider moves down and to the right on the grid based on the simple
