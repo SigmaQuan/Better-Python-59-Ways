@@ -100,7 +100,7 @@ def create_workers(input_list):
 
 
 def execute(workers):
-    threads = [threading.Thread(target=w.wap) for w in workers]
+    threads = [threading.Thread(target=w.map) for w in workers]
     for thread in threads:
         thread.start()
     for thread in threads:
