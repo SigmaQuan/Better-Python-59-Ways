@@ -42,10 +42,10 @@ Python 3.
 - 2. Move complex expressions into helper functions, especially if you need to
      use the same logic repeatedly.
 - 3. The if/else expression provides a more readable alternative to using
-     Boolean operators like or and adn in expressions.
+     Boolean operators like or and and in expressions.
 
 
-### [Item 5: Know hot to slice sequences](item_05_slice_sequence.py)
+### [Item 5: Know how to slice sequences](item_05_slice_sequence.py)
 - 1. Avoid being verbose: Don't supply 0 for the start index or the length of
      the sequence for the end index.
 - 2. Slicing is forgiving of start or end indexes that are out of bounds,
@@ -61,7 +61,7 @@ Python 3.
      indexes. Avoid negative stride values if possible.
 - 3. Avoid using start, end and stride together in a single slice. If you need
      all three parameters, consider doing two assignments (one to slice,
-     another to stride) or using islice form itertools built-in module.
+     another to stride) or using islice from itertools built-in module.
 
 
 ### [Item 7: Use list comprehensions instead of map and filter](item_07_list_not_map_filter.py) 
@@ -454,7 +454,7 @@ Python 3.
 - 2. Don't re-implement this functionality yourself. It's hard to get right.
 
 
-### [Item 47: Use decimal when precision ia paramount](item_47_use_decimal.py)
+### [Item 47: Use decimal when precision is paramount](item_47_use_decimal.py)
 - 1. Python has built-in types and classes in modules that can represent
     practically every type of numerical value.
 - 2. The Decimal class is ideal for situations that require high precision and
@@ -493,7 +493,7 @@ Python 3.
     that contains other source files. These files become that child modules
     of the directory's package. Package directories may also contain other
     packages.
-- 3. You can provide an explict API for a module by listing its publicly
+- 3. You can provide an explicit API for a module by listing its publicly
     visible name in its __all__ special attribute.
 - 4. You can hide a package's internal implementation by only importing public
     names in the package's __init__.py file or by naming internal-only
@@ -553,7 +553,7 @@ Python 3.
 - 2. Calling repr on built-in Python types will produce the printable string
     version of a value. These repr strings could be passed to the eval
     built-in function to get back the original value.
-- 3. %s in format strings will produce human-readable strings like str.%r will
+- 3. %s in format strings will produce human-readable strings like str. %r will
     produce printable strings like repr.
 - 4. You can define the __repr__ method to customize the printable
     representation of a class and provide more detailed debugging
