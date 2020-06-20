@@ -17,7 +17,7 @@ print(evens)
 # ['orange', 'green', 'purple']
 
 
-# The problem is that the stride syntax ofter cause unexpected behavior that
+# The problem is that the stride syntax often cause unexpected behavior that
 # can introduce bugs. For example, a common Python trick for reversing a byte
 # string is to slice the string with a stride of -1.
 
@@ -103,4 +103,4 @@ print(c)
 #     indexes. Avoid negative stride values if possible.
 # 3. Avoid using start, end and stride together in a single slice. If you need
 #     all three parameters, consider doing two assignments (one to slice,
-#     another to stride) or using islice form itertools built-in module.
+#     another to stride) or using islice from itertools built-in module.
