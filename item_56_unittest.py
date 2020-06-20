@@ -3,7 +3,7 @@ from unittest import TestCase, main
 from item_56_utils import to_str
 
 
-# Python doesn't have static type checking. There's nothing int eh compiler
+# Python doesn't have static type checking. There's nothing in the compiler
 # that ensure your program will work when you run it. With Python you don't
 # know whether the functions your program calls will be defined at runtime,
 # even when their existence is evident in the source code. This dynamic
@@ -27,7 +27,7 @@ from item_56_utils import to_str
 # There is no veil of static type checking to make you feel safe.
 
 # Luckily, the same dynamic features that prevent static type checking in
-# Python also make it extremely easy to write test for your code. You can use
+# Python also make it extremely easy to write tests for your code. You can use
 # Python's dynamic nature and easily overridable behaviors to implement tests
 # and ensure that your programs work as expected.
 
