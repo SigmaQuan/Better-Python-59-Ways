@@ -5,7 +5,7 @@
 # access a subset of a sequence's items with minimal effort. The simplest uses
 # for slicing are the built-in types list, str, and bytes. Slicing can be
 # extended to any Python class that implements the __getitem__ and __setitem__
-# special methods (see Item 28: Inherit form collections.abc for custom
+# special methods (see Item 28: Inherit from collections.abc for custom
 # container types).
 
 # The basic form of the slicing syntax is somelist[start:end], where start is

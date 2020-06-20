@@ -10,7 +10,7 @@
 # readability (type import this).
 
 # Programmers familiar with other language may try to write Python as if it's
-# C++, Java, or whatever know best. New programmers may still be getting
+# C++, Java, or whatever they know best. New programmers may still be getting
 # comfortable with the vast range of concepts expressible in Python. It's
 # important for everyone to know the best--the Pythonic--way to do the most
 # common things in Python. These patterns will affect every program you write.
@@ -37,7 +37,7 @@ print(sys.version)
 
 # Things to Remember
 
-# 1. There are two major version of Python still in active use: Python 2 and
+# 1. There are two major versions of Python still in active use: Python 2 and
 #     Python 3.
 # 2. There are multiple popular runtimes for Python: CPython, Jython,
 #     IronPython, PyPy, etc.

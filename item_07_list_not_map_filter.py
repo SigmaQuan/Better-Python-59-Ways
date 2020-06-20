@@ -27,7 +27,7 @@ print(list(squares))
 # [1, 4, 9, 16, 25, 36, 49, 64, 81, 100]
 
 
-# Unlike may, list comprehensions let you easily filter items from the input
+# Unlike map, list comprehensions let you easily filter items from the input
 # list, removing corresponding outputs from the result. For example, say you
 # only want to compute the squares of the numbers that are divisible by 2.
 # Here, I do this by adding a conditional expression to the list

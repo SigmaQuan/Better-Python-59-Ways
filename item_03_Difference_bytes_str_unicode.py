@@ -19,10 +19,10 @@ import os
 # When you're writing Python programs, it's important to do encoding and
 # decoding of Unicode at the furthest boundary of your interfaces. The core of
 # your program should use Unicode character types (str in Python 3, unicode in
-# Python 2) and should not assume any thing about character encodings. This
+# Python 2) and should not assume anything about character encodings. This
 # approach allows you to be very accepting of alternative text encodings
 # (such as Latin-1, Shift  JIS, and Big5) while being strict about your output
-# text encoding (idealy, UTF-8).
+# text encoding (ideally, UTF-8).
 
 # The split between character types leads to two common situations in Python
 # code:

@@ -20,7 +20,7 @@
 # Naming: PEP 8 suggests unique styles of naming for different part in the
 # language.
 
-# 1. Functions, variables, and attributs should be in lovercase_underscore
+# 1. Functions, variables, and attributes should be in lowercase_underscore
 #     format.
 # 2. Protected instance attributes should be in _leading_underscore format.
 # 3. Private instance attributes should be in __double_leading_underscore
