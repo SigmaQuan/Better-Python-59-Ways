@@ -10,7 +10,7 @@ import itertools
 
 def index_words(text):
     result = []
-    if next:
+    if text:
         result.append(0)
     for index, letter in enumerate(text):
         if letter == ' ':
