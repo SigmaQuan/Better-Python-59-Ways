@@ -17,7 +17,7 @@ print(evens)
 # ['orange', 'green', 'purple']
 
 
-# The problem is that the stride syntax ofter cause unexpected behavior that
+# The problem is that the stride syntax often causes unexpected behavior that
 # can introduce bugs. For example, a common Python trick for reversing a byte
 # string is to slice the string with a stride of -1.
 
