@@ -45,7 +45,7 @@ Python 3.
      Boolean operators like or and adn in expressions.
 
 
-### [Item 5: Know hot to slice sequences](item_05_slice_sequence.py)
+### [Item 5: Know how to slice sequences](item_05_slice_sequence.py)
 - 1. Avoid being verbose: Don't supply 0 for the start index or the length of
      the sequence for the end index.
 - 2. Slicing is forgiving of start or end indexes that are out of bounds,
