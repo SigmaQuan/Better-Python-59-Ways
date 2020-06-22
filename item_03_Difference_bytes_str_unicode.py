@@ -55,7 +55,7 @@ def to_bytes(bytes_or_str):
         value = bytes_or_str.encode('utf-8')
     else:
         value = bytes_or_str
-    return value  # Instance of str
+    return value  # Instance of bytes
 
 
 # In Python 2, you'll need one method that takes a str or unicode and always
