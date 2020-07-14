@@ -1,4 +1,4 @@
-# Item 5: Know hot to slice sequences
+# Item 5: Know how to slice sequences
 
 
 # Python includes syntax for slicing sequences into pieces. Slicing lets you
